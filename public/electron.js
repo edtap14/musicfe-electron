@@ -12,7 +12,7 @@ function createWindow () {
     width: 1500,
     height: 1000,
     title: 'Musicfy'
-		// titleBarStyle: "hiddenInset",
+		// titleBarStyle: 'hiddenInset'
 		// resizable: false,
   })
   mainWindow.loadURL(

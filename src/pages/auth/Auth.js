@@ -1,0 +1,13 @@
+import React from 'react'
+import { Button } from 'semantic-ui-react'
+import './Auth.scss'
+
+function Auth () {
+  return (
+    <div>
+      <Button primary>Auth Screen</Button>
+    </div>
+  )
+}
+
+export default Auth
