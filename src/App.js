@@ -1,8 +1,8 @@
 import React, { useState } from 'react'
 import { Button } from 'semantic-ui-react'
 import { getAuth, onAuthStateChanged } from 'firebase/auth'
-import LoggedNavigation from './routes/LoggedNavigation'
-import Auth from './pages/auth/Auth'
+import { LoggedNavigation } from './routes'
+import { Auth } from './pages'
 
 function App () {
   const [user, setUser] = useState(undefined)

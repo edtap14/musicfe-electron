@@ -1,1 +1,7 @@
 export * from './auth'
+export * from './Album'
+export * from './Albums'
+export * from './Artist'
+export * from './Artists'
+export * from './Home'
+export * from './Profile'
