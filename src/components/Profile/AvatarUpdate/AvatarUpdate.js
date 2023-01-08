@@ -15,14 +15,17 @@ export function AvatarUpdate () {
 
   const onDrop = useCallback(async acceptedFile => {
     const file = acceptedFile[0]
-    console.log({ file })
+
     setAvatarUrl(URL.createObjectURL(file))
     const response = await storageController.uploadFile(
 			file,
 			'avatar',
 			uid
 		)
-    console.log(response)
+    const url = await storageController.getUrlFile(
+			response.metadata.fullPath
+		)
+    await userController.updateAvatarUser(url)
   })
 
   const { getRootProps, getInputProps } = useDropzone({ onDrop })

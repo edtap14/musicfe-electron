@@ -1,12 +1,21 @@
-import { getStorage, ref, uploadBytes } from 'firebase/storage'
+import { getDownloadURL, getStorage, ref, uploadBytes } from 'firebase/storage'
 
 export class Storage {
   async uploadFile (file, folder, nameFile) {
     try {
       const storage = getStorage()
-      console.log(storage)
       const fileRef = ref(storage, `${folder}/${nameFile}`)
       return await uploadBytes(fileRef, file)
+    } catch (error) {
+      console.log(error)
+    }
+  }
+
+  async getUrlFile (pathFile) {
+    try {
+      const storage = getStorage()
+      const fileRef = ref(storage, pathFile)
+      return await getDownloadURL(fileRef)
     } catch (error) {
       console.log(error)
     }
